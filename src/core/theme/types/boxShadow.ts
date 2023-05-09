@@ -6,7 +6,7 @@ export declare type ShadowSettings = {
   blur: number;
 };
 
-export declare type Shadow = {
+export declare type BoxShadow = {
   none: ShadowSettings;
   xs: ShadowSettings;
   sm: ShadowSettings;

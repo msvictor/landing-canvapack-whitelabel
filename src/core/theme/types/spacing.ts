@@ -1,3 +1,3 @@
 import { Sizing } from './sizing';
 
-export declare type Spacing = Sizing;
+export declare type Spacing = Sizing<number>;

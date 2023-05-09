@@ -25,7 +25,7 @@ const getValue = (itemValue: any, parentKey: any): any => {
         if (item.type === THEME_TYPE.OPACITY && typeof item.value === 'string')
           itemMap[itemKey] = parseFloat(item.value) / 100.0;
         else if (
-          item.type === THEME_TYPE.SHADOW &&
+          item.type === THEME_TYPE.BOX_SHADOW &&
           typeof item.value === 'object'
         ) {
           itemMap[itemKey] = getShadow(item.value);

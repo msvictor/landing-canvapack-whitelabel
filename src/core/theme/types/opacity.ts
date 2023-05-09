@@ -1,5 +1,5 @@
 export declare type Opacity = {
-  transparent: string;
+  fade: string;
   subtle: string;
   disabled: string;
   empty: string;

@@ -1,12 +1,12 @@
 import { getTheme } from '~/core';
 import { styled } from '~/modules';
 
-const backgroundD0 = getTheme('colors.background.d0');
+const background500 = getTheme('colors.background.500');
 
 export const Wrapper = styled.div`
   width: 100%;
   min-height: 100vh;
   align-items: center;
   flex-direction: column;
-  background-color: ${backgroundD0};
+  background-color: ${background500};
 `;

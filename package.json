@@ -8,7 +8,8 @@
     "build:dev": "npx solidarity && dotenv -e .env.dev next build",
     "build:hml": "npx solidarity && dotenv -e .env.hml next build",
     "start": "npx solidarity && next start",
-    "lint": "next lint --fix",
+    "lint:check": "tsc && eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "tsc && eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
     "deploy": "yarn build && npx firebase deploy --only hosting",
     "generate:component": "npx hygen generator component",
     "generate:page": "npx hygen generator page"

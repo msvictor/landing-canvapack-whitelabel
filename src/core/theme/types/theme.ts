@@ -1,30 +1,35 @@
 import { DefaultTheme } from 'styled-components';
-import { Border } from './border';
+import { BorderRadius, BorderWidth } from './border';
+import { BoxShadow } from './boxShadow';
 import { Colors } from './colors';
-import { Fonts } from './fonts';
-import { FontSizing } from './fontSizing';
 import { LetterSpacing } from './letterSpacing';
-import { LineHeight } from './lineHeight';
+import { LineHeights } from './lineHeights';
 import { Opacity } from './opacity';
-import { Radius } from './radius';
-import { Shadow } from './shadow';
 import { Sizing } from './sizing';
 import { Spacing } from './spacing';
-import { Weight } from './weight';
+import {
+  FontSizes,
+  FontWeights,
+  FontsFamilies,
+  TextCase,
+  TextDecoration,
+} from './text';
 
 export declare type ThemeType = {
-  sizing: Sizing;
+  sizing: Sizing<number>;
   spacing: Spacing;
-  border: Border;
-  radius: Radius;
+  borderWidth: BorderWidth;
+  borderRadius: BorderRadius;
   opacity: Opacity;
-  weight: Weight;
-  shadow: Shadow;
-  fonts: Fonts;
-  fontSizing: FontSizing;
-  lineHeight: LineHeight;
+  fontWeights: FontWeights;
+  fontFamilies: FontsFamilies;
+  fontSizes: FontSizes;
+  lineHeights: LineHeights;
   letterSpacing: LetterSpacing;
   colors: Colors;
+  boxShadow: BoxShadow;
+  textCase: TextCase;
+  textDecoration: TextDecoration;
 };
 
 export declare type ThemeProps = {
