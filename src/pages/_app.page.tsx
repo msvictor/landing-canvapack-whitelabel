@@ -7,7 +7,7 @@ import { ToastContainer } from '~/utils';
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
-      <NextSeo title="Template React | CerradoBit" />
+      <NextSeo title="Pack de Imagens - Maurício Designer" />
       <Provider rootStore={store}>
         <ThemeProvider theme={store.theme}>
           <ToastContainer />
