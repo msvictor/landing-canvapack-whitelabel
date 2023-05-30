@@ -6,19 +6,21 @@ export declare type ShadeColors = {
 };
 
 export declare type DefaultColors = {
-  50: string;
-  300: string;
+  50?: string;
+  100?: string;
+  200?: string;
+  300?: string;
+  400?: string;
   500: string;
-  700: string;
-  900: string;
-  fade: string;
+  600?: string;
+  700?: string;
+  800?: string;
+  900?: string;
+  fade?: string;
+  contrast?: string;
 };
 
-export declare type BackgroundColors = DefaultColors & {
-  800: string;
-};
-
-export declare type Colors = {
+export declare type Color = {
   shade: ShadeColors;
   danger: DefaultColors;
   success: DefaultColors;
@@ -27,6 +29,6 @@ export declare type Colors = {
   text: DefaultColors;
   primary: DefaultColors;
   secondary: DefaultColors;
-  tertiary: DefaultColors;
-  background: BackgroundColors;
+  tertiary?: DefaultColors;
+  background: DefaultColors;
 };

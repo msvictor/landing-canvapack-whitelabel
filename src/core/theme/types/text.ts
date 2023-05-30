@@ -1,11 +1,11 @@
 import { Sizing } from './sizing';
 
-export declare type FontsFamilies = {
-  icons: Record<string, string>;
-  texts: Record<string, string>;
+export declare type FontFamily = {
+  icon: Record<string, string>;
+  text: Record<string, string>;
 };
 
-export declare type FontWeights = {
+export declare type FontWeight = {
   thin: string;
   light: string;
   regular: string;
@@ -15,7 +15,7 @@ export declare type FontWeights = {
   black: string;
 };
 
-export declare type FontSizes = Sizing<number>;
+export declare type FontSize = Sizing<number>;
 
 export declare type TextCase = {
   none: string;

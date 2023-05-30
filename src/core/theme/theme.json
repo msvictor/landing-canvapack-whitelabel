@@ -189,7 +189,7 @@
       "type": "opacity"
     }
   },
-  "fontWeights": {
+  "fontWeight": {
     "thin": {
       "value": 100,
       "type": "fontWeights"
@@ -219,33 +219,37 @@
       "type": "fontWeights"
     }
   },
-  "fontFamilies": {
-    "icons": {
-      "fontAwesome": {
+  "fontFamily": {
+    "icon": {
+      "i1": {
         "value": "Font Awesome 6 Pro",
         "type": "fontFamilies"
       },
-      "featherIcons": {
+      "i2": {
         "value": "Feather Icons",
         "type": "fontFamilies"
       }
     },
-    "texts": {
-      "roboto": {
+    "text": {
+      "t1": {
         "value": "Roboto",
         "type": "fontFamilies"
       },
-      "montserrat": {
+      "t2": {
         "value": "Montserrat",
         "type": "fontFamilies"
       },
-      "poppins": {
+      "t3": {
         "value": "Poppins",
+        "type": "fontFamilies"
+      },
+      "t4": {
+        "value": "Inter",
         "type": "fontFamilies"
       }
     }
   },
-  "fontSizes": {
+  "fontSize": {
     "min": {
       "value": 10,
       "type": "fontSizes"
@@ -283,7 +287,7 @@
       "type": "fontSizes"
     }
   },
-  "lineHeights": {
+  "lineHeight": {
     "min": {
       "value": "100%",
       "type": "lineHeights"
@@ -355,7 +359,7 @@
       }
     },
     "danger": {
-      "50": {
+      "100": {
         "value": "#FEF2F2",
         "type": "color"
       },
@@ -381,7 +385,7 @@
       }
     },
     "success": {
-      "50": {
+      "100": {
         "value": "#ECFDF5",
         "type": "color"
       },
@@ -407,7 +411,7 @@
       }
     },
     "warning": {
-      "50": {
+      "100": {
         "value": "#FBF4DA",
         "type": "color"
       },
@@ -433,7 +437,7 @@
       }
     },
     "info": {
-      "50": {
+      "100": {
         "value": "#EFF6FF",
         "type": "color"
       },
@@ -459,20 +463,20 @@
       }
     },
     "text": {
-      "50": {
+      "100": {
         "value": "#FFFFFF",
         "type": "color"
       },
       "300": {
-        "value": "#DDDDDD",
+        "value": "#CCCCCC",
         "type": "color"
       },
       "500": {
-        "value": "#FBF1EC",
+        "value": "#999999",
         "type": "color"
       },
       "700": {
-        "value": "#999999",
+        "value": "#2E2E2E",
         "type": "color"
       },
       "900": {
@@ -480,12 +484,12 @@
         "type": "color"
       },
       "fade": {
-        "value": "#FBF1EC4D",
+        "value": "#9999994D",
         "type": "color"
       }
     },
     "background": {
-      "50": {
+      "100": {
         "value": "#FFFFFF",
         "type": "color"
       },
@@ -494,7 +498,7 @@
         "type": "color"
       },
       "500": {
-        "value": "#F8FAFC",
+        "value": "#FCF1EC",
         "type": "color"
       },
       "700": {
@@ -515,80 +519,20 @@
       }
     },
     "primary": {
-      "50": {
-        "value": "#DECEC9",
-        "type": "color"
-      },
-      "300": {
-        "value": "#CA8A77",
-        "type": "color"
-      },
       "500": {
         "value": "#9C533D",
-        "type": "color"
-      },
-      "700": {
-        "value": "#79402F",
-        "type": "color"
-      },
-      "900": {
-        "value": "#4F3027",
-        "type": "color"
-      },
-      "fade": {
-        "value": "#9C533D4D",
         "type": "color"
       }
     },
     "secondary": {
-      "50": {
-        "value": "#F1DDD5",
-        "type": "color"
-      },
-      "300": {
-        "value": "#DFC0B4",
-        "type": "color"
-      },
       "500": {
         "value": "#D69E88",
-        "type": "color"
-      },
-      "700": {
-        "value": "#BF856E",
-        "type": "color"
-      },
-      "900": {
-        "value": "#AE684C",
-        "type": "color"
-      },
-      "fade": {
-        "value": "#D69E8866",
         "type": "color"
       }
     },
     "tertiary": {
-      "50": {
-        "value": "#FFFFFF",
-        "type": "color"
-      },
-      "300": {
-        "value": "#EFE5DC",
-        "type": "color"
-      },
       "500": {
         "value": "#EDD3BA",
-        "type": "color"
-      },
-      "700": {
-        "value": "#EAB98B",
-        "type": "color"
-      },
-      "900": {
-        "value": "#CE8640",
-        "type": "color"
-      },
-      "fade": {
-        "value": "#EDD3BA4D",
         "type": "color"
       }
     }
@@ -648,7 +592,7 @@
       "value": {
         "x": "0",
         "y": "25",
-        "blur": "50",
+        "blur": "100",
         "spread": "-12",
         "color": "rgba(0, 0, 0, 0.2)"
       },

@@ -5,7 +5,7 @@ import { PageWrapper } from '~/components';
 import { styled } from '~/modules'
 import { getTheme } from '~/core';
 
-const primaryColor = getTheme('colors.primary.500');
+const primaryColor = getTheme('color.primary.500');
 
 export const Wrapper = styled(PageWrapper)`
   justify-content: center;

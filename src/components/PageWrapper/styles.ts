@@ -1,7 +1,7 @@
 import { getTheme } from '~/core';
 import { styled } from '~/modules';
 
-const background500 = getTheme('colors.background.500');
+const background500 = getTheme('color.background.500');
 
 export const Wrapper = styled.div`
   width: 100%;
