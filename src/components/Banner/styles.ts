@@ -82,6 +82,7 @@ export const Title = styled.span<Props>`
   display: flex;
   flex-direction: row;
   gap: ${pxToRem(8)};
+  justify-content: ${isDesktop('flex-start', 'center')};
 `;
 
 export const Subtitle = styled.span<Props>`
@@ -94,20 +95,16 @@ export const Subtitle = styled.span<Props>`
   flex-wrap: wrap;
   border-radius: ${borderRadiusMd}px;
   gap: ${pxToRem(8)};
+  justify-content: ${isDesktop('flex-start', 'center')};
 `;
 
-export const ActionsWrapper = styled.div`
+export const ActionsWrapper = styled.div<Props>`
   z-index: 2;
-  flex-direction: row;
+  flex-direction: ${isDesktop('row', 'column')};
   gap: ${pxToRem(24)};
   margin-top: ${pxToRem(90)};
 `;
 
 export const Button = styled(ButtonBase)`
   flex: 1;
-`;
-
-export const SocialWrapper = styled.div`
-  z-index: 2;
-  flex-direction: row;
 `;

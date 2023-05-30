@@ -31,10 +31,10 @@ const Banner: FC<Props> = ({ image }) => {
         {isDesktop && <ContentBackground />}
 
         <TextWrapper>
-          <Title>
+          <Title desktop={isDesktop}>
             Crie um <Title underline>feed profissional</Title>
           </Title>
-          <Subtitle>
+          <Subtitle desktop={isDesktop}>
             transforme seu feed com essas artes
             <Subtitle contrast>editáveis</Subtitle> e
             <Subtitle contrast>profissionais</Subtitle>
@@ -42,7 +42,7 @@ const Banner: FC<Props> = ({ image }) => {
           </Subtitle>
         </TextWrapper>
 
-        <ActionsWrapper>
+        <ActionsWrapper desktop={isDesktop}>
           <Button variant="flat" label="ENTRE EM CONTATO" />
           <Button label="EU QUERO O PACK" />
         </ActionsWrapper>
