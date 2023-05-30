@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { Fox } from '~/utils';
+import { MainBanner } from '~/utils';
 import { Banner, Wrapper } from './styles';
 
 const Home: FC = () => (
   <Wrapper>
-    <Banner image={Fox} />
+    <Banner image={MainBanner} />
   </Wrapper>
 );
 

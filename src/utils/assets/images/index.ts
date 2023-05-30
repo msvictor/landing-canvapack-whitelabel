@@ -1,2 +1,1 @@
-export { default as Fox } from './fox.png';
-export { default as ByCerradobit } from './by-cerradobit.png';
+export { default as MainBanner } from './main_banner.png';

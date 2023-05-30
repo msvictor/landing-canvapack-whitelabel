@@ -1,15 +1,52 @@
 import { FC } from 'react';
 import type { StaticImageData } from 'next/image';
-import { Image, Wrapper } from './styles';
+import { useStores } from '~/utils';
+import {
+  ActionsWrapper,
+  Button,
+  ContentBackground,
+  ContentWrapper,
+  ImageFade,
+  ImageWrapper,
+  Subtitle,
+  TextWrapper,
+  Title,
+  Wrapper,
+} from './styles';
 
 type Props = {
-  image: StaticImageData | string;
+  image: StaticImageData;
 };
 
 const Banner: FC<Props> = ({ image }) => {
+  const { theme } = useStores();
+  const { isDesktop } = theme;
+
   return (
     <Wrapper>
-      <Image src={image} alt="logo" />
+      <ImageWrapper image={image} desktop={isDesktop}>
+        <ImageFade />
+      </ImageWrapper>
+      <ContentWrapper desktop={isDesktop}>
+        {isDesktop && <ContentBackground />}
+
+        <TextWrapper>
+          <Title>
+            Crie um <Title underline>feed profissional</Title>
+          </Title>
+          <Subtitle>
+            transforme seu feed com essas artes
+            <Subtitle contrast>editáveis</Subtitle> e
+            <Subtitle contrast>profissionais</Subtitle>
+            <Subtitle contrast>em menos de 5 minutos</Subtitle>
+          </Subtitle>
+        </TextWrapper>
+
+        <ActionsWrapper>
+          <Button variant="flat" label="ENTRE EM CONTATO" />
+          <Button label="EU QUERO O PACK" />
+        </ActionsWrapper>
+      </ContentWrapper>
     </Wrapper>
   );
 };
