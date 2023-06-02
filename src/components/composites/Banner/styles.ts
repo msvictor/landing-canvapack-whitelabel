@@ -1,7 +1,7 @@
 import { StaticImageData } from 'next/image';
 import { getTheme, ifStyle, pxToRem } from '~/core';
 import { styled } from '~/modules';
-import ButtonBase from '../Button';
+import ButtonBase from '../../basics/Button';
 
 type Props = {
   image?: StaticImageData;
