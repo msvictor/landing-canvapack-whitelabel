@@ -39,8 +39,9 @@ export const Wrapper = styled.button<Props>`
   padding: ${sizingSm}px ${sizingMd}px;
   align-items: center;
   justify-content: center;
-  background-color: ${(props) => background[props.variant!]};
-  border: ${borderWidthXxs}px solid ${(props) => border[props.variant!]};
+  background-color: ${(props) => background[props.variant ?? 'primary']};
+  border: ${borderWidthXxs}px solid
+    ${(props) => border[props.variant ?? 'primary']};
   border-radius: ${borderRadiusXs}px;
   opacity: ${(props) => (props.disabled ? opacityDisabled : opacityOpaque)};
 
@@ -52,7 +53,7 @@ export const Wrapper = styled.button<Props>`
 `;
 
 export const Text = styled.span<Props>`
-  color: ${(props) => text[props.variant!]};
+  color: ${(props) => text[props.variant ?? 'primary']};
   font-weight: ${fontWeightsMedium};
   font-size: ${fontSizesXl}px;
   font-weight: 700;
