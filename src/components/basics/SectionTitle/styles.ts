@@ -51,6 +51,6 @@ export const Wrapper = styled.div<Props>`
     height: 5px;
     border-radius: ${borderRadiusCircle}px;
     background-color: ${hasContrast(text100, primary500)};
-    margin: ${pxToRem(16)} 0px;
+    margin: ${pxToRem(4)} 0px;
   }
 `;

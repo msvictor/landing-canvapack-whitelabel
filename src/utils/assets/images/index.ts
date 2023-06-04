@@ -1,1 +1,9 @@
 export { default as MainBanner } from './main_banner.png';
+export { default as CalendarCover } from './calendar_cover.png';
+export { default as CalendarManual } from './calendar_manual.png';
+export { default as CalendarPreview } from './calendar_preview.png';
+export { default as Cleaning } from './cleaning.png';
+export { default as Depilation } from './depilation.png';
+export { default as Stretching } from './stretching.png';
+export { default as iPhone } from './iphone.png';
+export { default as Warranty } from './warranty.png';

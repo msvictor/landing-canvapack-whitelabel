@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { ComponentType, FC } from 'react';
 import { PARSE_INDICATOR, PARSE_SEPARATOR } from '~/utils';
 import { Wrapper } from './styles';
 
@@ -6,9 +6,15 @@ type Props = {
   texts: string[];
   contrast?: boolean;
   alignment?: 'left' | 'right' | 'center';
+  icon?: ComponentType;
 };
 
-const BodyText: FC<Props> = ({ texts, contrast, alignment = 'left' }) => {
+const BodyText: FC<Props> = ({
+  texts,
+  contrast,
+  icon: IconComponent,
+  alignment = 'left',
+}) => {
   const textParsed = (text: string) => {
     const textSplitted = text.split(PARSE_SEPARATOR.CONTRAST);
 
@@ -31,7 +37,11 @@ const BodyText: FC<Props> = ({ texts, contrast, alignment = 'left' }) => {
   return (
     <Wrapper alignment={alignment} contrast={contrast}>
       {texts.map((text) => (
-        <p key={text.trim()}>{textParsed(text)}</p>
+        <div>
+          {alignment === 'left' && IconComponent && <IconComponent />}
+          <p key={text.trim()}>{textParsed(text)}</p>
+          {alignment === 'right' && IconComponent && <IconComponent />}
+        </div>
       ))}
     </Wrapper>
   );

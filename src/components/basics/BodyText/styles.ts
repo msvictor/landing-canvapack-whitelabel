@@ -26,18 +26,33 @@ export const Wrapper = styled.div<Props>`
   flex-direction: column;
   justify-content: center;
   align-items: ${({ alignment }) => getAlignment(alignment ?? 'center')};
+  > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
 
-  > p {
-    font-size: ${pxToRem(24)};
-    color: ${hasContrast(primary500, text100)};
-    text-align: ${({ alignment }) => alignment};
-
-    & + p {
-      margin-top: ${pxToRem(24)};
+    & + div {
+      margin-top: ${pxToRem(32)};
     }
 
-    > span {
+    > svg {
       color: ${hasContrast(text100, primary500)};
+      margin-right: ${({ alignment }) =>
+        alignment === 'left' ? pxToRem(16) : 0};
+      margin-left: ${({ alignment }) =>
+        alignment === 'right' ? pxToRem(16) : 0};
+      font-size: ${pxToRem(60)};
+    }
+
+    > p {
+      font-size: ${pxToRem(24)};
+      color: ${hasContrast(primary500, text100)};
+      text-align: ${({ alignment }) => alignment};
+
+      > span {
+        color: ${hasContrast(text100, primary500)};
+      }
     }
   }
 `;
