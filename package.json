@@ -82,7 +82,7 @@
     "@types/styled-components": "^5.1.26",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
-    "@typescript-eslint/typescript-estree": "^5.59.0",
+    "@typescript-eslint/typescript-estree": "^5.59.8",
     "awesome-typescript-loader": "^5.2.1",
     "babel-polyfill": "^6.26.0",
     "cz-conventional-changelog": "^3.3.0",
