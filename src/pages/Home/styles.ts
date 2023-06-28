@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+import { ReactElasticCarouselProps } from 'react-elastic-carousel';
 import {
   Banner as BannerBase,
   BodyText as BodyTextBase,
@@ -9,7 +11,7 @@ import {
   SectionTitle as SectionTitleBase,
 } from '~/components';
 import { ifStyle, pxToRem } from '~/core';
-import { styled } from '~/modules';
+import { Carousel as CarouselBase, styled } from '~/modules';
 import { mqDevices } from '~/utils';
 
 type Props = {
@@ -27,6 +29,10 @@ export const SectionTitle = styled(SectionTitleBase)``;
 export const BodyText = styled(BodyTextBase)``;
 export const ImageCard = styled(ImageCardBase)``;
 export const Button = styled(ButtonBase)``;
+
+export const Carousel = styled(CarouselBase as new () => CarouselBase)<
+  ReactElasticCarouselProps & { children: ReactNode }
+>``;
 
 export const Image = styled(ImageBase)<Props>`
   @media ${mqDevices.inDesktop} {
@@ -49,7 +55,10 @@ export const VideoSectionWrapper = styled.div`
   align-items: center;
 
   min-height: ${pxToRem(450)};
-  margin: ${pxToRem(90)} 0px;
+
+  @media ${mqDevices.inDesktop} {
+    margin: ${pxToRem(90)} 0px;
+  }
 
   > div {
     display: flex;
@@ -79,12 +88,8 @@ export const BenefitsSectionWrapper = styled.div`
   }
 
   > section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: ${pxToRem(16)};
+    margin-top: ${pxToRem(12)};
     margin-bottom: ${pxToRem(64)};
-    flex-direction: row;
   }
 `;
 

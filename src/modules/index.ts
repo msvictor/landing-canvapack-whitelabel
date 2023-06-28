@@ -42,3 +42,4 @@ export {
   getRemoteConfig,
   getValue,
 } from 'firebase/remote-config';
+export { default as Carousel } from 'react-elastic-carousel';
