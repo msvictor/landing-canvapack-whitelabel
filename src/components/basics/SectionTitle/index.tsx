@@ -3,7 +3,7 @@ import { PARSE_INDICATOR, PARSE_SEPARATOR } from '~/utils';
 import { Wrapper } from './styles';
 
 type Props = {
-  title: string;
+  title?: string;
   subtitle?: string;
   contrast?: boolean;
   alignment?: 'left' | 'right' | 'center';
@@ -36,7 +36,7 @@ const SectionTitle: FC<Props> = ({
 
   return (
     <Wrapper alignment={alignment} contrast={contrast}>
-      <h1>{textParsed(title)}</h1>
+      {title && <h1>{textParsed(title)}</h1>}
       <div />
       {subtitle && <h2>{textParsed(subtitle)}</h2>}
     </Wrapper>

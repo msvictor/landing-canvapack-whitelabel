@@ -8,9 +8,17 @@ import {
   Section as SectionBase,
   SectionTitle as SectionTitleBase,
 } from '~/components';
-import { pxToRem } from '~/core';
+import { ifStyle, pxToRem } from '~/core';
 import { styled } from '~/modules';
 import { mqDevices } from '~/utils';
+
+type Props = {
+  desktop?: boolean;
+  mobile?: boolean;
+};
+
+const desktop = ifStyle('desktop');
+const mobile = ifStyle('mobile');
 
 export const Wrapper = styled(PageWrapper)``;
 export const Banner = styled(BannerBase)``;
@@ -18,8 +26,16 @@ export const Section = styled(SectionBase)``;
 export const SectionTitle = styled(SectionTitleBase)``;
 export const BodyText = styled(BodyTextBase)``;
 export const ImageCard = styled(ImageCardBase)``;
-export const Image = styled(ImageBase)``;
 export const Button = styled(ButtonBase)``;
+
+export const Image = styled(ImageBase)<Props>`
+  @media ${mqDevices.inDesktop} {
+    display: ${mobile('none')};
+  }
+  @media ${mqDevices.inMobileAndTablet} {
+    display: ${desktop('none')};
+  }
+`;
 
 export const Content = styled.div`
   flex: 1;
@@ -56,23 +72,19 @@ export const VideoSectionWrapper = styled.div`
 export const BenefitsSectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0px ${pxToRem(60)};
+  margin-top: ${pxToRem(32)};
+
+  @media ${mqDevices.inDesktop} {
+    margin: 0px ${pxToRem(60)};
+  }
 
   > section {
-    margin-top: ${pxToRem(16)};
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: ${pxToRem(32)};
+    gap: ${pxToRem(16)};
     margin-bottom: ${pxToRem(64)};
-
-    @media ${mqDevices.inDesktop} {
-      flex-direction: row;
-    }
-    @media ${mqDevices.inMobileAndTablet} {
-      flex-direction: column;
-    }
+    flex-direction: row;
   }
 `;
 
@@ -111,13 +123,15 @@ export const AboutSectionWrapper = styled.div`
 `;
 
 export const WarrantySectionWrapper = styled.div`
-  margin: 0px ${pxToRem(90)};
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: ${pxToRem(32)};
+
+  @media ${mqDevices.inDesktop} {
+    margin: 0px ${pxToRem(90)};
+  }
 
   > img {
     width: auto;

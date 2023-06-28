@@ -13,7 +13,7 @@ const BodyText: FC<Props> = ({
   texts,
   contrast,
   icon: IconComponent,
-  alignment = 'left',
+  alignment = 'center',
 }) => {
   const textParsed = (text: string) => {
     const textSplitted = text.split(PARSE_SEPARATOR.CONTRAST);

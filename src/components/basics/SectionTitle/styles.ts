@@ -1,5 +1,6 @@
 import { getTheme, ifStyle, pxToRem } from '~/core';
 import { styled } from '~/modules';
+import { mqDevices } from '~/utils';
 
 type Props = {
   alignment?: 'left' | 'right' | 'center';
@@ -28,10 +29,19 @@ export const Wrapper = styled.div<Props>`
   justify-content: center;
   align-items: ${({ alignment }) => getAlignment(alignment ?? 'center')};
 
+  @media ${mqDevices.inMobileAndTablet} {
+    align-items: center;
+  }
+
   > h1 {
     font-size: ${pxToRem(32)};
     color: ${hasContrast(primary500, text100)};
     text-align: ${({ alignment }) => alignment};
+
+    @media ${mqDevices.inMobileAndTablet} {
+      text-align: center;
+    }
+
     > span {
       color: ${hasContrast(text100, primary500)};
     }
@@ -41,6 +51,11 @@ export const Wrapper = styled.div<Props>`
     font-size: ${pxToRem(28)};
     color: ${hasContrast(primary500, text100)};
     text-align: ${({ alignment }) => alignment};
+
+    @media ${mqDevices.inMobileAndTablet} {
+      text-align: center;
+    }
+
     > span {
       color: ${hasContrast(text100, primary500)};
     }
