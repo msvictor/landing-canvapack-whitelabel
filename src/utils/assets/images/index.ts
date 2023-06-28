@@ -7,3 +7,5 @@ export { default as Depilation } from './depilation.png';
 export { default as Stretching } from './stretching.png';
 export { default as iPhone } from './iphone.png';
 export { default as Warranty } from './warranty.png';
+export { default as Product } from './product.png';
+export { default as ProductBonus } from './product_bonus.png';

@@ -7,6 +7,7 @@ import {
   Image as ImageBase,
   ImageCard as ImageCardBase,
   PageWrapper,
+  ProductCard as ProductCardBase,
   Section as SectionBase,
   SectionTitle as SectionTitleBase,
 } from '~/components';
@@ -29,6 +30,7 @@ export const SectionTitle = styled(SectionTitleBase)``;
 export const BodyText = styled(BodyTextBase)``;
 export const ImageCard = styled(ImageCardBase)``;
 export const Button = styled(ButtonBase)``;
+export const ProductCard = styled(ProductCardBase)``;
 
 export const Carousel = styled(CarouselBase as new () => CarouselBase)<
   ReactElasticCarouselProps & { children: ReactNode }
@@ -152,5 +154,22 @@ export const ButtonWrapper = styled.section`
 
   > button {
     width: ${pxToRem(350)};
+  }
+`;
+
+export const ProductsSectionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: ${pxToRem(32)};
+
+  @media ${mqDevices.inDesktop} {
+    margin: 0px ${pxToRem(90)};
+  }
+
+  > img {
+    width: auto;
+    max-height: ${pxToRem(260)};
   }
 `;
