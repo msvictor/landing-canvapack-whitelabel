@@ -89,7 +89,10 @@ const Home: FC = () => {
           <section>
             <Carousel isRTL={false} breakPoints={breakPoints}>
               {photos.map((image) => (
-                <ImageCard image={image} />
+                <ImageCard
+                  key={`photos-carousel-${Math.random()}`}
+                  image={image}
+                />
               ))}
             </Carousel>
           </section>
@@ -101,9 +104,10 @@ const Home: FC = () => {
           <section>
             <Carousel isRTL={false} breakPoints={breakPoints}>
               {calendar.map((image) => (
-                <div>
-                  <ImageCard image={image} />
-                </div>
+                <ImageCard
+                  key={`calendar-carousel-${Math.random()}`}
+                  image={image}
+                />
               ))}
             </Carousel>
           </section>
