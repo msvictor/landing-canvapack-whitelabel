@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import type { StaticImageData } from 'next/image';
-import { useStores } from '~/utils';
 import {
   ActionsWrapper,
   Button,
@@ -19,30 +18,26 @@ type Props = {
 };
 
 const Banner: FC<Props> = ({ image }) => {
-  const { theme } = useStores();
-  const { isDesktop } = theme;
-
   return (
     <Wrapper>
-      <ImageWrapper image={image} desktop={isDesktop}>
+      <ImageWrapper image={image}>
         <ImageFade />
       </ImageWrapper>
-      <ContentWrapper desktop={isDesktop}>
-        {isDesktop && <ContentBackground />}
+      <ContentWrapper>
+        <ContentBackground />
 
         <TextWrapper>
-          <Title desktop={isDesktop}>
-            Crie um <Title underline>feed profissional</Title>
+          <Title>
+            Crie um <span>feed profissional</span>
           </Title>
-          <Subtitle desktop={isDesktop}>
-            transforme seu feed com essas artes
-            <Subtitle contrast>editáveis</Subtitle> e
-            <Subtitle contrast>profissionais</Subtitle>
-            <Subtitle contrast>em menos de 5 minutos</Subtitle>
+
+          <Subtitle>
+            transforme seu feed com essas artes <span>editáveis</span> e{' '}
+            <span>profissionais</span> <span>em menos de 5 minutos</span>
           </Subtitle>
         </TextWrapper>
 
-        <ActionsWrapper desktop={isDesktop}>
+        <ActionsWrapper>
           <Button variant="flat" label="ENTRE EM CONTATO" />
           <Button label="EU QUERO O PACK" />
         </ActionsWrapper>

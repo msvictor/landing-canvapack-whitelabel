@@ -1,13 +1,11 @@
 import { StaticImageData } from 'next/image';
-import { getTheme, ifStyle, pxToRem } from '~/core';
+import { getTheme, pxToRem } from '~/core';
 import { styled } from '~/modules';
+import { mqDevices } from '~/utils';
 import ButtonBase from '../../basics/Button';
 
 type Props = {
   image?: StaticImageData;
-  underline?: boolean;
-  contrast?: boolean;
-  desktop?: boolean;
 };
 
 const text100 = getTheme('color.text.100');
@@ -15,12 +13,7 @@ const primary500 = getTheme('color.primary.500');
 const tertiary500 = getTheme('color.tertiary.500');
 const shadeBlackFade = getTheme('color.shade.blackFade');
 const textDecorationUnderline = getTheme('textDecoration.underline');
-const textDecorationNone = getTheme('textDecoration.none');
 const borderRadiusMd = getTheme('borderRadius.md');
-
-const hasUnderline = ifStyle('underline');
-const hasContrast = ifStyle('contrast');
-const isDesktop = ifStyle('desktop');
 
 export const Wrapper = styled.div`
   position: relative;
@@ -38,7 +31,10 @@ export const ImageWrapper = styled.div<Props>`
   background-image: ${(props) => `url(${props.image?.src})`};
   background-position: center;
   background-repeat: no-repeat;
-  background-size: ${isDesktop(180)}vw;
+
+  @media ${mqDevices.inDesktop} {
+    background-size: 180vw;
+  }
 `;
 
 export const ImageFade = styled.div`
@@ -47,17 +43,27 @@ export const ImageFade = styled.div`
   height: 100%;
 `;
 
-export const ContentWrapper = styled.section<Props>`
+export const ContentWrapper = styled.section`
   position: relative;
-  width: ${isDesktop(65, 100)}vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 ${pxToRem(160)} 0 ${pxToRem(80)};
   z-index: 1;
-  background-color: ${isDesktop('none', tertiary500)};
-  opacity: ${isDesktop('100%', '90%')};
+
+  @media ${mqDevices.inDesktop} {
+    width: 65vw;
+    background-color: none;
+    opacity: 100%;
+    padding: 0 ${pxToRem(160)} 0 ${pxToRem(80)};
+  }
+
+  @media ${mqDevices.inMobileAndTablet} {
+    width: 100vw;
+    background-color: ${tertiary500};
+    opacity: 90%;
+    padding: 0 ${pxToRem(80)} 0 ${pxToRem(80)};
+  }
 `;
 
 export const ContentBackground = styled.div`
@@ -74,35 +80,55 @@ export const TextWrapper = styled.div`
   flex-direction: column;
 `;
 
-export const Title = styled.span<Props>`
-  text-decoration: ${hasUnderline(textDecorationUnderline, textDecorationNone)};
+export const Title = styled.p`
   font-size: ${pxToRem(50)};
-  color: ${primary500};
   font-weight: 900;
-  display: flex;
-  flex-direction: row;
-  gap: ${pxToRem(8)};
-  justify-content: ${isDesktop('flex-start', 'center')};
+  color: ${primary500};
+  margin-bottom: ${pxToRem(8)};
+
+  > span {
+    text-decoration: ${textDecorationUnderline};
+  }
+
+  @media ${mqDevices.inDesktop} {
+    text-align: left;
+  }
+
+  @media ${mqDevices.inMobileAndTablet} {
+    text-align: center;
+  }
 `;
 
-export const Subtitle = styled.span<Props>`
+export const Subtitle = styled.p`
   font-size: ${pxToRem(36)};
-  color: ${hasContrast(text100, primary500)};
-  background-color: ${hasContrast(primary500, 'none')};
+  color: ${primary500};
   font-weight: 500;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  border-radius: ${borderRadiusMd}px;
-  gap: ${pxToRem(8)};
-  justify-content: ${isDesktop('flex-start', 'center')};
+
+  > span {
+    color: ${text100};
+    background-color: ${primary500};
+    border-radius: ${borderRadiusMd}px;
+  }
+
+  @media ${mqDevices.inDesktop} {
+    text-align: left;
+  }
+  @media ${mqDevices.inMobileAndTablet} {
+    text-align: center;
+  }
 `;
 
-export const ActionsWrapper = styled.div<Props>`
+export const ActionsWrapper = styled.div`
   z-index: 2;
-  flex-direction: ${isDesktop('row', 'column')};
   gap: ${pxToRem(24)};
   margin-top: ${pxToRem(90)};
+
+  @media ${mqDevices.inDesktop} {
+    flex-direction: row;
+  }
+  @media ${mqDevices.inMobileAndTablet} {
+    flex-direction: column;
+  }
 `;
 
 export const Button = styled(ButtonBase)`

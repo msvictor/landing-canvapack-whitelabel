@@ -8,14 +8,9 @@ import {
   Section as SectionBase,
   SectionTitle as SectionTitleBase,
 } from '~/components';
-import { ifStyle, pxToRem } from '~/core';
+import { pxToRem } from '~/core';
 import { styled } from '~/modules';
-
-type Props = {
-  desktop?: boolean;
-};
-
-const isDesktop = ifStyle('desktop');
+import { mqDevices } from '~/utils';
 
 export const Wrapper = styled(PageWrapper)``;
 export const Banner = styled(BannerBase)``;
@@ -32,9 +27,8 @@ export const Content = styled.div`
   justify-content: center;
 `;
 
-export const VideoSectionWrapper = styled.div<Props>`
+export const VideoSectionWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(${isDesktop(2, 1)}, 1fr);
   gap: ${pxToRem(32)};
   align-items: center;
 
@@ -50,9 +44,16 @@ export const VideoSectionWrapper = styled.div<Props>`
   > iframe {
     min-height: ${pxToRem(400)};
   }
+
+  @media ${mqDevices.inDesktop} {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media ${mqDevices.inMobileAndTablet} {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
-export const BenefitsSectionWrapper = styled.div<Props>`
+export const BenefitsSectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0px ${pxToRem(60)};
@@ -61,28 +62,46 @@ export const BenefitsSectionWrapper = styled.div<Props>`
     margin-top: ${pxToRem(16)};
 
     display: flex;
-    flex-direction: ${isDesktop('row', 'column')};
     justify-content: space-between;
     align-items: center;
     gap: ${pxToRem(32)};
     margin-bottom: ${pxToRem(64)};
+
+    @media ${mqDevices.inDesktop} {
+      flex-direction: row;
+    }
+    @media ${mqDevices.inMobileAndTablet} {
+      flex-direction: column;
+    }
   }
 `;
 
-export const AboutSectionWrapper = styled.div<Props>`
+export const AboutSectionWrapper = styled.div`
   margin: ${pxToRem(90)} 0px;
 
   display: flex;
-  flex-direction: ${isDesktop('row', 'column')};
   align-items: center;
   justify-content: space-between;
   gap: ${pxToRem(32)};
+
+  @media ${mqDevices.inDesktop} {
+    flex-direction: row;
+  }
+  @media ${mqDevices.inMobileAndTablet} {
+    flex-direction: column;
+  }
 
   > div {
     display: flex;
     flex-direction: column;
     gap: ${pxToRem(32)};
-    margin-bottom: ${isDesktop(0, pxToRem(64))};
+
+    @media ${mqDevices.inDesktop} {
+      margin-bottom: 0;
+    }
+    @media ${mqDevices.inMobileAndTablet} {
+      margin-bottom: ${pxToRem(64)};
+    }
 
     > section {
       width: 100%;
@@ -91,7 +110,7 @@ export const AboutSectionWrapper = styled.div<Props>`
   }
 `;
 
-export const WarrantySectionWrapper = styled.div<Props>`
+export const WarrantySectionWrapper = styled.div`
   margin: 0px ${pxToRem(90)};
 
   display: flex;

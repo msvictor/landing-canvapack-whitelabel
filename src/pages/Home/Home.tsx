@@ -39,7 +39,7 @@ const Home: FC<Props> = ({ desktop }) => (
     <Banner image={MainBanner} />
 
     <Section contrast>
-      <VideoSectionWrapper desktop={desktop}>
+      <VideoSectionWrapper>
         <div>
           <SectionTitle
             alignment={desktop ? 'left' : 'center'}
@@ -74,7 +74,7 @@ const Home: FC<Props> = ({ desktop }) => (
       />
 
       <Section>
-        <BenefitsSectionWrapper desktop={desktop}>
+        <BenefitsSectionWrapper>
           <SectionTitle
             alignment={desktop ? 'left' : 'center'}
             title={`${PARSE_SEPARATOR.CONTRAST}${PARSE_INDICATOR.CONTRAST}41 Templates${PARSE_SEPARATOR.CONTRAST} para feed (1080x1080)`}
@@ -101,7 +101,7 @@ const Home: FC<Props> = ({ desktop }) => (
     </Section>
 
     <Section contrast>
-      <AboutSectionWrapper desktop={desktop}>
+      <AboutSectionWrapper>
         <div>
           <SectionTitle
             alignment={desktop ? 'left' : 'center'}

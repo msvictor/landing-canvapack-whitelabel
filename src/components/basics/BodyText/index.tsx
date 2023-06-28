@@ -37,9 +37,9 @@ const BodyText: FC<Props> = ({
   return (
     <Wrapper alignment={alignment} contrast={contrast}>
       {texts.map((text) => (
-        <div>
+        <div key={text.trim()}>
           {alignment === 'left' && IconComponent && <IconComponent />}
-          <p key={text.trim()}>{textParsed(text)}</p>
+          <p>{textParsed(text)}</p>
           {alignment === 'right' && IconComponent && <IconComponent />}
         </div>
       ))}
