@@ -45,6 +45,7 @@ const Carousel: FC<Props> = ({
       <DotsWrapper>
         {pages.map((page) => (
           <Dot
+            key={page}
             active={page === activePage}
             onClick={() => onClick(String(page))}
           />

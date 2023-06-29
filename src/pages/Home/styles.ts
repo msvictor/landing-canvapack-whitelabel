@@ -75,14 +75,14 @@ export const VideoSectionWrapper = styled.div`
 export const BenefitsSectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: ${pxToRem(32)};
+  margin-top: ${pxToRem(46)};
 
   @media ${mqDevices.inDesktop} {
     margin: 0px ${pxToRem(60)};
   }
 
   > section {
-    margin-top: ${pxToRem(12)};
+    margin-top: ${pxToRem(8)};
     margin-bottom: ${pxToRem(64)};
   }
 `;
@@ -163,5 +163,17 @@ export const ProductsSectionWrapper = styled.div`
   > img {
     width: auto;
     max-height: ${pxToRem(260)};
+  }
+`;
+
+export const CommonQuestionsSectionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: ${pxToRem(32)};
+
+  @media ${mqDevices.inDesktop} {
+    margin: 0px ${pxToRem(90)};
   }
 `;

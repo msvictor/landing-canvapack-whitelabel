@@ -43,12 +43,14 @@ export const Wrapper = styled.div<Props>`
     }
 
     > svg {
+      width: 50px;
+      height: 50px;
       color: ${hasContrast(text100, primary500)};
       margin-right: ${({ alignment }) =>
         alignment === 'left' ? pxToRem(16) : 0};
       margin-left: ${({ alignment }) =>
         alignment === 'right' ? pxToRem(16) : 0};
-      font-size: ${pxToRem(60)};
+      font-size: ${pxToRem(48)};
 
       @media ${mqDevices.inMobileAndTablet} {
         display: none;

@@ -7,6 +7,8 @@ type Props = {
   subtitle?: string;
   contrast?: boolean;
   alignment?: 'left' | 'right' | 'center';
+  separator?: boolean;
+  divider?: boolean;
 };
 
 const SectionTitle: FC<Props> = ({
@@ -14,6 +16,8 @@ const SectionTitle: FC<Props> = ({
   subtitle,
   contrast,
   alignment = 'center',
+  separator = true,
+  divider = false,
 }) => {
   const textParsed = (text: string) => {
     const textSplitted = text.split(PARSE_SEPARATOR.CONTRAST);
@@ -37,8 +41,9 @@ const SectionTitle: FC<Props> = ({
   return (
     <Wrapper alignment={alignment} contrast={contrast}>
       {title && <h1>{textParsed(title)}</h1>}
-      <div />
+      {separator && <div />}
       {subtitle && <h2>{textParsed(subtitle)}</h2>}
+      {divider && <div />}
     </Wrapper>
   );
 };

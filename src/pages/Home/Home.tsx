@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { StaticImageData } from 'next/image';
 import {
   FiCheckCircle,
+  FiChevronsRight,
   FiXCircle,
   MainBanner,
   PARSE_INDICATOR,
@@ -17,6 +18,7 @@ import {
   Button,
   ButtonWrapper,
   Carousel,
+  CommonQuestionsSectionWrapper,
   Image,
   ImageCard,
   ProductCard,
@@ -76,14 +78,17 @@ const Home: FC<Props> = ({ photos, calendar, products }) => (
 
     <Section>
       <SectionTitle
+        contrast
         title="Veja o que você vai receber"
         subtitle="ao adquirir o pack de estética"
       />
 
       <BenefitsSectionWrapper>
         <SectionTitle
+          divider
+          separator={false}
           alignment="left"
-          title={`${PARSE_SEPARATOR.CONTRAST}${PARSE_INDICATOR.CONTRAST}41 Templates${PARSE_SEPARATOR.CONTRAST} para feed (1080x1080)`}
+          subtitle={`${PARSE_SEPARATOR.CONTRAST}${PARSE_INDICATOR.CONTRAST}41 Templates${PARSE_SEPARATOR.CONTRAST} para feed (1080x1080)`}
         />
 
         <section>
@@ -99,7 +104,9 @@ const Home: FC<Props> = ({ photos, calendar, products }) => (
 
         <SectionTitle
           alignment="left"
-          title={`${PARSE_SEPARATOR.CONTRAST}${PARSE_INDICATOR.CONTRAST}Bônus${PARSE_SEPARATOR.CONTRAST} - Calendário de conteúdo 2023 `}
+          separator={false}
+          divider
+          subtitle={`${PARSE_SEPARATOR.CONTRAST}${PARSE_INDICATOR.CONTRAST}Bônus${PARSE_SEPARATOR.CONTRAST} - Calendário de conteúdo 2023 `}
         />
         <section>
           <Carousel>
@@ -187,6 +194,22 @@ const Home: FC<Props> = ({ photos, calendar, products }) => (
           ))}
         </Carousel>
       </ProductsSectionWrapper>
+    </Section>
+
+    <Section>
+      <CommonQuestionsSectionWrapper>
+        <SectionTitle title="Dúvidas Frequentes" contrast />
+        <BodyText
+          icon={FiChevronsRight}
+          alignment="left"
+          texts={[
+            `${PARSE_SEPARATOR.CONTRAST}${PARSE_INDICATOR.CONTRAST}Você não precisa da versão paga do Canva pra usar o template:${PARSE_SEPARATOR.CONTRAST} O Pack de Estética não necessita dos recursos pagos do Canva. Você conseguirá criar, editar e salvar suas postagens pela versão gratuita.`,
+            `${PARSE_SEPARATOR.CONTRAST}${PARSE_INDICATOR.CONTRAST}Você também pode acessar do celular:${PARSE_SEPARATOR.CONTRAST} Basta você baixar o aplicativo do Canva e acessar o Combo Pack de Estética por lá para criar suas postagens direto pelo seu smartphone.`,
+            `${PARSE_SEPARATOR.CONTRAST}${PARSE_INDICATOR.CONTRAST}Você não limitação de tempo para acessar o pack:${PARSE_SEPARATOR.CONTRAST} Você poderá acessar os conteúdos enquanto existir a plataforma Combo Pack de Estética.`,
+            `${PARSE_SEPARATOR.CONTRAST}${PARSE_INDICATOR.CONTRAST}Se houver  dúvidas mais específicas e só entrar em contato:${PARSE_SEPARATOR.CONTRAST} Não se preocupe! Se você tiver qualquer dúvida ou dificuldade, poderá entrar em contato.`,
+          ]}
+        />
+      </CommonQuestionsSectionWrapper>
     </Section>
   </Wrapper>
 );

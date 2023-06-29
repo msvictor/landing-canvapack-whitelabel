@@ -7,4 +7,5 @@ export {
   FiDownload,
   FiChevronLeft,
   FiChevronRight,
+  FiChevronsRight,
 } from 'react-icons/fi';
