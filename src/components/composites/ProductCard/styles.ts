@@ -1,7 +1,7 @@
 import { StaticImageData } from 'next/image';
 import { getTheme, pxToRem } from '~/core';
 import { styled } from '~/modules';
-import ButtonBase from '../Button';
+import ButtonBase from '../../basics/Button';
 
 const borderRadiusLg = getTheme('borderRadius.lg');
 const primary500 = getTheme('color.primary.500');
@@ -19,7 +19,7 @@ export const Wrapper = styled.div<Props>`
   min-height: ${pxToRem(500)};
   overflow: hidden;
   border-radius: ${borderRadiusLg}px;
-  box-shadow: -4px 8px 12px rgb(0, 0, 0, 0.15);
+  box-shadow: 0px 6px 10px rgb(0, 0, 0, 0.15);
 
   background-image: ${(props) => `url(${props.image?.src})`};
   background-size: cover;

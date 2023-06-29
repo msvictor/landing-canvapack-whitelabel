@@ -6,4 +6,5 @@ export { default as SectionTitle } from './basics/SectionTitle';
 export { default as Section } from './basics/Section';
 export { default as BodyText } from './basics/BodyText';
 export { default as ImageCard } from './basics/ImageCard';
-export { default as ProductCard } from './basics/ProductCard';
+export { default as ProductCard } from './composites/ProductCard';
+export { default as Carousel } from './basics/Carousel';

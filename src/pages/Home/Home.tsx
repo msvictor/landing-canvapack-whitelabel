@@ -31,10 +31,7 @@ import {
 type Props = {
   photos: StaticImageData[];
   calendar: StaticImageData[];
-  breakPoints: {
-    width: number;
-    itemsToShow: number;
-  }[];
+
   products: {
     image: StaticImageData;
     title: string;
@@ -44,7 +41,7 @@ type Props = {
   }[];
 };
 
-const Home: FC<Props> = ({ photos, calendar, breakPoints, products }) => (
+const Home: FC<Props> = ({ photos, calendar, products }) => (
   <Wrapper>
     <Banner image={MainBanner} />
 
@@ -90,7 +87,7 @@ const Home: FC<Props> = ({ photos, calendar, breakPoints, products }) => (
         />
 
         <section>
-          <Carousel isRTL={false} breakPoints={breakPoints}>
+          <Carousel>
             {photos.map((image) => (
               <ImageCard
                 key={`photos-carousel-${Math.random()}`}
@@ -105,7 +102,7 @@ const Home: FC<Props> = ({ photos, calendar, breakPoints, products }) => (
           title={`${PARSE_SEPARATOR.CONTRAST}${PARSE_INDICATOR.CONTRAST}Bônus${PARSE_SEPARATOR.CONTRAST} - Calendário de conteúdo 2023 `}
         />
         <section>
-          <Carousel isRTL={false} breakPoints={breakPoints}>
+          <Carousel>
             {calendar.map((image) => (
               <ImageCard
                 key={`calendar-carousel-${Math.random()}`}
@@ -133,7 +130,7 @@ const Home: FC<Props> = ({ photos, calendar, breakPoints, products }) => (
             />
           </section>
         </div>
-        <Image alt="image" src={iPhone} desktop />
+        <Image alt="image" src={iPhone} display="desktop" />
         <div>
           <SectionTitle
             alignment="right"
@@ -151,7 +148,7 @@ const Home: FC<Props> = ({ photos, calendar, breakPoints, products }) => (
             />
           </section>
         </div>
-        <Image alt="image" src={iPhone} mobile />
+        <Image alt="image" src={iPhone} display="mobile" />
       </AboutSectionWrapper>
 
       <ButtonWrapper>
@@ -177,7 +174,7 @@ const Home: FC<Props> = ({ photos, calendar, breakPoints, products }) => (
       <ProductsSectionWrapper>
         <SectionTitle title="Packs Disponíveis" />
 
-        <Carousel isRTL={false} breakPoints={breakPoints}>
+        <Carousel>
           {products.map(({ image, title, captions, price, priceSplitted }) => (
             <ProductCard
               key={`products-carousel-${Math.random()}`}

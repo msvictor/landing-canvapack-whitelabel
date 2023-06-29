@@ -1,9 +1,8 @@
-import { ReactNode } from 'react';
-import { ReactElasticCarouselProps } from 'react-elastic-carousel';
 import {
   Banner as BannerBase,
   BodyText as BodyTextBase,
   Button as ButtonBase,
+  Carousel as CarouselBase,
   Image as ImageBase,
   ImageCard as ImageCardBase,
   PageWrapper,
@@ -11,17 +10,13 @@ import {
   Section as SectionBase,
   SectionTitle as SectionTitleBase,
 } from '~/components';
-import { ifStyle, pxToRem } from '~/core';
-import { Carousel as CarouselBase, styled } from '~/modules';
+import { pxToRem } from '~/core';
+import { styled } from '~/modules';
 import { mqDevices } from '~/utils';
 
 type Props = {
-  desktop?: boolean;
-  mobile?: boolean;
+  display?: 'desktop' | 'mobile';
 };
-
-const desktop = ifStyle('desktop');
-const mobile = ifStyle('mobile');
 
 export const Wrapper = styled(PageWrapper)``;
 export const Banner = styled(BannerBase)``;
@@ -31,17 +26,14 @@ export const BodyText = styled(BodyTextBase)``;
 export const ImageCard = styled(ImageCardBase)``;
 export const Button = styled(ButtonBase)``;
 export const ProductCard = styled(ProductCardBase)``;
-
-export const Carousel = styled(CarouselBase as new () => CarouselBase)<
-  ReactElasticCarouselProps & { children: ReactNode }
->``;
+export const Carousel = styled(CarouselBase)``;
 
 export const Image = styled(ImageBase)<Props>`
   @media ${mqDevices.inDesktop} {
-    display: ${mobile('none')};
+    display: ${({ display }) => display === 'mobile' && 'none'};
   }
   @media ${mqDevices.inMobileAndTablet} {
-    display: ${desktop('none')};
+    display: ${({ display }) => display === 'desktop' && 'none'};
   }
 `;
 

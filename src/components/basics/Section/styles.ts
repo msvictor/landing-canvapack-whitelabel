@@ -1,5 +1,6 @@
 import { getTheme, ifStyle, pxToRem } from '~/core';
 import { styled } from '~/modules';
+import { mqDevices } from '~/utils';
 
 type Props = {
   contrast?: boolean;
@@ -12,11 +13,19 @@ const tertiary500 = getTheme('color.tertiary.500');
 
 export const Wrapper = styled.div<Props>`
   width: 100%;
-  padding: ${pxToRem(54)} ${pxToRem(81)};
+
   background-color: ${hasContrast(secondary500, tertiary500)};
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media ${mqDevices.inDesktop} {
+    padding: ${pxToRem(56)} ${pxToRem(82)};
+  }
+
+  @media ${mqDevices.inMobileAndTablet} {
+    padding: ${pxToRem(26)} ${pxToRem(41)};
+  }
 
   > section {
     width: 100%;

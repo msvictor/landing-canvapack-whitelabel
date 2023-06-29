@@ -24,7 +24,7 @@ const ProductCard: FC<Props> = ({
         <p>{title}</p>
 
         {captions.map((caption) => (
-          <span>
+          <span key={caption.trim()}>
             <FiDownload />
             {caption}
           </span>

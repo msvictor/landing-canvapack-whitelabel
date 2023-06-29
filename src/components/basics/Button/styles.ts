@@ -1,19 +1,15 @@
-import { getTheme } from '~/core/theme';
+import { getTheme, pxToRem } from '~/core/theme';
 import { styled } from '~/modules';
 
 type Props = {
   variant?: ButtonVariant;
 };
 
-const sizingSm = getTheme('sizing.sm');
-const sizingMd = getTheme('sizing.md');
 const background500 = getTheme('color.background.500');
 const primary500 = getTheme('color.primary.500');
 const tertiary500 = getTheme('color.tertiary.500');
 const borderWidthXxs = getTheme('borderWidth.xxs');
 const borderRadiusXs = getTheme('borderRadius.xs');
-const fontWeightsMedium = getTheme('fontWeight.medium');
-const fontSizesXl = getTheme('fontSize.xl');
 const opacityDisabled = getTheme('opacity.disabled');
 const opacityOpaque = getTheme('opacity.opaque');
 
@@ -36,7 +32,7 @@ const border = {
 };
 
 export const Wrapper = styled.button<Props>`
-  padding: ${sizingSm}px ${sizingMd}px;
+  padding: ${pxToRem(8)} ${pxToRem(16)};
   align-items: center;
   justify-content: center;
   background-color: ${(props) => background[props.variant ?? 'primary']};
@@ -54,7 +50,6 @@ export const Wrapper = styled.button<Props>`
 
 export const Text = styled.span<Props>`
   color: ${(props) => text[props.variant ?? 'primary']};
-  font-weight: ${fontWeightsMedium};
-  font-size: ${fontSizesXl}px;
+  font-size: ${pxToRem(20)};
   font-weight: 700;
 `;

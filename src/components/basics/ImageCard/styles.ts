@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   max-height: ${pxToRem(450)};
   overflow: hidden;
   border-radius: ${borderRadiusLg}px;
-  box-shadow: -4px 8px 12px rgb(0, 0, 0, 0.15);
+  box-shadow: 0px 6px 10px rgb(0, 0, 0, 0.15);
 `;
 
 export const Image = styled(NextImage)`

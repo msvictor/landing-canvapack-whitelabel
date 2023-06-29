@@ -15,11 +15,7 @@ import Home from './Home';
 export const HomeContainer: FC = () => {
   const photos = [Cleaning, Stretching, Depilation];
   const calendar = [CalendarCover, CalendarManual, CalendarPreview];
-  const breakPoints = [
-    { width: 550, itemsToShow: 1 },
-    { width: 768, itemsToShow: 2 },
-    { width: 1200, itemsToShow: 3 },
-  ];
+
   const products = [
     {
       image: Product,
@@ -36,14 +32,7 @@ export const HomeContainer: FC = () => {
     },
   ];
 
-  return (
-    <Home
-      photos={photos}
-      calendar={calendar}
-      breakPoints={breakPoints}
-      products={products}
-    />
-  );
+  return <Home photos={photos} calendar={calendar} products={products} />;
 };
 
 export default observer(HomeContainer);
